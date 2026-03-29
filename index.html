@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Estudio UTMACH</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #111;
+      color: white;
+      text-align: center;
+    }
+    button {
+      padding: 15px;
+      margin: 10px;
+      font-size: 18px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+    }
+    .box {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📚 Estudio UTMACH</h1>
+
+  <div class="box">
+    <button onclick="mostrar('mate')">Matemáticas</button>
+    <button onclick="mostrar('lengua')">Lengua</button>
+    <button onclick="mostrar('razonamiento')">Razonamiento</button>
+  </div>
+
+  <div id="contenido" class="box"></div>
+
+  <script>
+    function mostrar(tipo) {
+      let contenido = document.getElementById("contenido");
+
+      if (tipo === "mate") {
+        contenido.innerHTML = `
+          <h2>Matemáticas</h2>
+          <p>Ejemplo: ¿Cuánto es 5 + 3?</p>
+          <button onclick="respuesta(8)">8</button>
+          <button onclick="respuesta(6)">6</button>
+        `;
+      }
+
+      if (tipo === "lengua") {
+        contenido.innerHTML = `
+          <h2>Lengua</h2>
+          <p>¿Cuál es un sustantivo?</p>
+          <button onclick="respuesta(1)">Perro</button>
+          <button onclick="respuesta(0)">Correr</button>
+        `;
+      }
+
+      if (tipo === "razonamiento") {
+        contenido.innerHTML = `
+          <h2>Razonamiento</h2>
+          <p>¿Qué número sigue? 2, 4, 6, ?</p>
+          <button onclick="respuesta(8)">8</button>
+          <button onclick="respuesta(10)">10</button>
+        `;
+      }
+    }
+
+    function respuesta(valor) {
+      if (valor === 8 || valor === 1) {
+        alert("✅ Correcto");
+      } else {
+        alert("❌ Incorrecto");
+      }
+    }
+  </script>
+
+</body>
+</html>
